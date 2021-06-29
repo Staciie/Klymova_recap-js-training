@@ -61,8 +61,8 @@ export function calculateNumbers(obj) {
         if (typeof obj[property] == 'number') {
             // Хотела избежать погрешностей исчесления в случаях, если чисел после запятых будет разное количество
             let fractional = obj[property].toString().split('.');
-            let fractionalAmmount = fractional[1].split('').length;
-            biggerFractional = Math.max(biggerFractional, fractionalAmmount);
+            let fractionalAmount = fractional[1].split('').length;
+            biggerFractional = Math.max(biggerFractional, fractionalAmount);
             let secondMultiplier = Math.pow(10, biggerFractional);
             sum += Math.ceil((obj[property]) * secondMultiplier);
         } else {
@@ -76,15 +76,15 @@ export function calculateNumbers(obj) {
 export function fourOfKind(arr) {
     let currNum = null;
     let returnNum = 0;
-    let ammount = 1;
+    let amount = 1;
 
     function filterArr(elem) {
         if (currNum == elem) {
-            ammount++;
+            amount++;
         } else {
-            ammount = 1;
+            amount = 1;
         }
-        if (ammount == 4) {
+        if (amount == 4) {
             returnNum = currNum;
         }
         currNum = elem;
