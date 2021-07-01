@@ -5,8 +5,14 @@
   количество лет оставшихся до пенсии.
 */
 
-function retirement() {
-
+function retirement(retirementAge) {
+  const currDate = new Date().getFullYear();
+  return (yearOfBirth) => {
+    if (yearOfBirth > currDate) {
+      throw new Error('Please, enter valid year!');
+    } return retirementAge - (currDate - yearOfBirth);
+  };
 }
 
+// console.log(retirement(65)(2002));
 export default retirement;
