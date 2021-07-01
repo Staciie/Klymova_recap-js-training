@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-restricted-syntax */
 /* eslint max-len: ["error", { "code": 150 }] */
 /*
   Верните контекст  у setTimeout. Сделать это 2-мя способами.
@@ -22,11 +24,13 @@ const laptop = {
   },
   correctTimeoutCombineFeatures1() {
     // version #1
-    setTimeout(this.combineFeatures, 2000);
+    setTimeout(this.combineFeatures.bind(laptop), 2000);
   },
   correctTimeoutCombineFeatures2() {
     // version #2
-    setTimeout(this.combineFeatures, 2000);
+    setTimeout(() => {
+      laptop.combineFeatures();
+    }, 2000);
   },
 };
 

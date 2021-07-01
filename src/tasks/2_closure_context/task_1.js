@@ -6,7 +6,15 @@
 */
 
 function generateUniqInteger() {
-
+  const arr = [];
+  return () => {
+    const num = Math.ceil(Math.random() * 10);
+    if (arr.includes(num)) {
+      return arr;
+    }
+    arr.push(num);
+    return num;
+  };
 }
 
 export default generateUniqInteger;

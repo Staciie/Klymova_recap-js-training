@@ -16,8 +16,8 @@
   console.log(generator()); // 9
 */
 
-
-function createGenerator() {
+function createGenerator(start, step = 1) {
+  return () => (start += step);
 }
 
 export default createGenerator;
