@@ -35,11 +35,11 @@ describe('Test class Person', () => {
       warning = output;
     };
 
-    person.dateOfBirth = new Date('05/01/2020');
+    person.dateOfBirth = new Date('05/01/2022');
     expect(warning).toEqual('Date is not valid');
   });
 
   it('should return right info', () => {
-    expect(person.getInfo()).toEqual("My name is Vlad Dracula. I'm 20 years old.");
+    expect(person.getInfo()).toEqual("My name is Vlad Dracula. I'm 22 years old.");
   });
 });

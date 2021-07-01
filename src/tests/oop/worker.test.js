@@ -14,7 +14,7 @@ describe('Test class Worker', () => {
 
   it('should use all methods from parent class', () => {
     expect(worker.getFullName()).toEqual('Vlad Dracula');
-    expect(worker.getAge()).toEqual(20);
+    expect(worker.getAge()).toEqual(22);
   });
 
   it('should return salary', () => {
@@ -22,7 +22,7 @@ describe('Test class Worker', () => {
   });
 
   it('should return extended info', () => {
-    expect(worker.getInfo()).toBe("My name is Vlad Dracula. I'm 20 years old. I have a salary of 14000.");
+    expect(worker.getInfo()).toBe("My name is Vlad Dracula. I'm 22 years old. I have a salary of 14000.");
   });
 
   it('should return worker with higher salary', () => {
