@@ -14,13 +14,20 @@
   const result = updateString(‘Hello World!’);
 */
 
-export const uppercase = () => {};
+export const uppercase = (str) => str.toUpperCase();
 
-export const trimSpaces = () => {};
+export const trimSpaces = (str) => str.trim();
 
-export const reverseString = () => {};
+export const reverseString = (str) => str.split('').reverse().join('');
 
-function combine() {
+function combine(...func) {
+  const functions = func.reverse();
+  return (str) => {
+    functions.forEach((elem) => {
+      str = elem(str);
+    });
+    return str;
+  };
 }
 
 export default combine;

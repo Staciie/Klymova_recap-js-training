@@ -9,6 +9,28 @@
 
 import Person from './person';
 
-class Worker extends Person {}
+class Worker extends Person {
+  #salary = 0;
+  
+  constructor(name, surname, fullName, rate, daysWorked) {
+    super(name, surname, fullName);
+    this.rate = rate;
+    this.daysWorked = daysWorked;
+    this.#salary = this.rate * this.daysWorked;
+  }
+
+  getInfo() {
+    return `${super.getInfo()} I have a salary of ${this.salary}.`
+  };
+  
+  get salary() {
+    return this.#salary;
+  }
+
+  static compare(workerA, workerB) {
+    return workerA.salary > workerB.salary ? workerA : workerB;
+  }
+}
+
 
 export default Worker;

@@ -17,10 +17,10 @@ describe('Test Person function constructor', () => {
   });
 
   it('should return right years old', () => {
-    expect(person.getAge()).toEqual(20);
+    expect(person.getAge()).toEqual(22);
   });
 
   it('should return right info', () => {
-    expect(person.getInfo()).toEqual("My name is Vlad Dracula. I'm 20 years old.");
+    expect(person.getInfo()).toEqual("My name is Vlad Dracula. I'm 22 years old.");
   });
 });
