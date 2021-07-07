@@ -3,8 +3,29 @@
 // Пусть промис своим результатом возвращает эту задержку.
 
 // Вторая функция принимает число. Необходимо сформировать массив задержек
-// в результате выполнения прошлой функции(посказка Promise.all), найти его сумму и вывести на экран.
+// в результате выполнения прошлой функции(посказка Promise.all),
+// найти его сумму и вывести на экран.
 
-export function delay() {}
+function delay() {
+  return new Promise((resolve) => {
+    const random = Math.ceil(Math.random() * 5);
+    setTimeout(() => {
+      resolve(random);
+    }, random * 1000);
+  }).then((n) => n);
+}
 
-export function sum() {}
+function sum() {
+  Promise.all([
+    delay(),
+    delay(),
+    delay(),
+    delay(),
+    delay(),
+  ]).then((results) => {
+    const resultsSum = results.reduce((totalSum, value) => totalSum + value);
+    console.log(resultsSum);
+  });
+}
+
+sum();
